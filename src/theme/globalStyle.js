@@ -2,12 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;500&display=swap');
     * {
       box-sizing: border-box;
     }
 
     html, body {
-      font-family: Arial,sans-serif;
+      font-family: 'Exo 2',sans-serif;
+      font-weight: 200;
       width: 100vw;
       overflow-x: hidden;
       margin: 0;
