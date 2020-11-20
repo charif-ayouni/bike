@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import async from '../components/async'
 import WithAuth from '../withAuth'
+import Navigation from '../components/navigation'
 
 const Login = async(() => import('../screens/login'))
 const Home = async(() => import('../screens/home'))
@@ -61,6 +62,7 @@ const Routes = () => (
         />
       ))}
     </Switch>
+    <Navigation />
   </Router>
 )
 
