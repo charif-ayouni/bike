@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container } from './home.index'
 const Home = () => {
-  return <Container />
+  return <div>Home Page</div>
 }
 
 export default Home
