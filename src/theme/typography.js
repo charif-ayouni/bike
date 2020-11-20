@@ -1,41 +1,45 @@
+const fontWeight = {
+  extraLight: 200,
+  light: 300,
+  medium: 500
+}
+
 const typography = {
-  fontFamily: ['Arial', 'sans-serif'].join(','),
   fontSize: 14,
-  fontWeightLight: 300,
-  fontWeightRegular: 400,
-  fontWeightMedium: 600,
+  fontWeight: fontWeight,
   h1: {
     fontSize: '2rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.medium,
     lineHeight: 1.2
   },
   h2: {
     fontSize: '1.75rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.light,
     lineHeight: 1.2
   },
   h3: {
     fontSize: '1.5rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.light,
     lineHeight: 1.2
   },
   h4: {
     fontSize: '1.25rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.light,
     lineHeight: 1.2
   },
   h5: {
     fontSize: '1.125rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.light,
     lineHeight: 1.2
   },
   h6: {
     fontSize: '1.0625rem',
-    fontWeight: 600,
+    fontWeight: fontWeight.light,
     lineHeight: 1.2
   },
   body1: {
-    fontSize: 14
+    fontSize: 14,
+    fontWeight: fontWeight.extraLight
   },
   button: {
     color: '#fff',
