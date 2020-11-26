@@ -45,4 +45,8 @@ export default createGlobalStyle`
       -ms-overflow-style: none; 
       scrollbar-width: none;
     }
+    .App {
+      display: flex;
+      justify-content: center;
+    }
 `
