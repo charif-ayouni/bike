@@ -12,8 +12,7 @@ import {
 
 const Navigation = () => {
   const location = useLocation()
-
-  if (location && location.pathname !== '/login') {
+  if (location && !['/login', '/register'].includes(location.pathname)) {
     return (
       <Container>
         <Wrapper>
