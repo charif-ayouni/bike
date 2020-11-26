@@ -1,13 +1,16 @@
 import { typography } from './typography'
 const theme = {
-  primaryColors: {
-    greenDark: '#2c570a',
-    greenLight: '#8bc345',
-    blueDark: '#004973'
+  light: {
+    primaryColors: {},
+    secondaryColors: {},
+    navigationColors: {},
+    typography: typography
   },
-  secondaryColors: {
-    greenTransparent: '#2c570a33'
-  },
-  typography: typography
+  dark: {
+    primaryColors: {},
+    secondaryColors: {},
+    navigationColors: {},
+    typography: typography
+  }
 }
 export { theme }
