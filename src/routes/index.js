@@ -5,6 +5,7 @@ import WithAuth from '../withAuth'
 import Navigation from '../components/navigation'
 
 const Login = async(() => import('../screens/login'))
+const Register = async(() => import('../screens/register'))
 const Home = async(() => import('../screens/home'))
 const Locations = async(() => import('../screens/locations'))
 const Return = async(() => import('../screens/return'))
@@ -16,6 +17,11 @@ const publicRoutes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
   }
 ]
 
