@@ -16,6 +16,10 @@ export default createGlobalStyle`
       padding: 0;
     }
     
+    body {
+      background-color: ${props => props.theme.background}
+    }
+    
     body::-webkit-scrollbar {
       display: none
     }

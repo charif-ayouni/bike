@@ -18,8 +18,8 @@ const App = () => {
   })
   return (
     <Provider store={store}>
-      <ThemeProvider theme={currentTheme}>
-        <GlobalStyle />
+      <ThemeProvider theme={currentTheme.style}>
+        <GlobalStyle theme={currentTheme.style} />
         <div className='App'>
           <Routes />
         </div>

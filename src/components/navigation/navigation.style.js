@@ -6,7 +6,7 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
   padding: 0;
-  background: #ffffff;
+  background: ${props => props.theme.background};
   box-shadow: 0 -2px 5px rgb(185 185 185 / 73%);
   z-index: 0;
 `
@@ -66,7 +66,7 @@ export const ButtonHome = styled.button`
   &:focus {
     outline: none;
   }
-  background: #fff;
+  background: ${props => props.theme.background};
   border-radius: 100%;
   box-shadow: 0 -4px 3px rgb(185 185 185 / 73%);
   padding: 0.8rem;
