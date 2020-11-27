@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import async from '../components/async'
 import WithAuth from '../withAuth'
 import Navigation from '../components/navigation'
+import Header from '../components/header'
 
 const Login = async(() => import('../screens/login'))
 const Register = async(() => import('../screens/register'))
@@ -55,6 +56,7 @@ const privateRoutes = [
 
 const Routes = () => (
   <Router>
+    <Header />
     <Switch>
       {privateRoutes.map(({ path, component: Component }, index) => (
         <WithAuth key={index} path={path} exact component={Component} />
