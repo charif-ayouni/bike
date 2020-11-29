@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './rate.style'
-import Star from '../../components/star'
-import Review from '../../components/review'
+import Star from '../star'
+import Review from '../review'
 
 const Rate = props => {
   let { rate } = { ...props }

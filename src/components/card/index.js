@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardBody, Header, Title, Card as Container } from './card.style'
-import Rate from './components/rate'
+import Rate from '../rate'
 import City from './components/city'
 
 const Card = props => {

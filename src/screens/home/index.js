@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Bikes from '../../components/bikes'
+import Single from '../single'
 
 const Home = () => {
   let content
@@ -15,7 +16,7 @@ const Home = () => {
   } else if (bike !== null) {
     content = (
       <React.Fragment>
-        <p>Bike details</p>
+        <Single bike={bike} />
       </React.Fragment>
     )
   } else {
