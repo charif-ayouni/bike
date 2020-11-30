@@ -2,33 +2,52 @@ import React from 'react'
 import { Label } from './status.style'
 import { CgUnavailable } from 'react-icons/cg'
 import { GiCheckMark } from 'react-icons/gi'
+import { VscLoading } from 'react-icons/vsc'
 
 const Status = props => {
   let { status } = { ...props }
   const translate = status => {
     let statuses = {
       available: 'disponible',
-      unavailable: 'indisponible'
+      unavailable: 'indisponible',
+      pending: 'en cours',
+      confirmed: 'confirmées'
     }
     return statuses[status]
   }
   return (
-    <Label available={status === 'available'}>
+    <Label color={Color(status)}>
       {translate(status)}
-      <Icon icon={status} available={status === 'available'} />
+      <Icon icon={status} />
     </Label>
   )
 }
 export default Status
 
 const Icon = props => {
-  let { icon, available } = { ...props }
-  let color = available ? '#2c570a' : '#db0000'
+  let { icon } = { ...props }
   switch (icon) {
     case 'available':
-      return <GiCheckMark style={{ margin: '0 10px' }} color={color} />
+    case 'confirmed':
+      return <GiCheckMark style={{ margin: '0 10px' }} color={Color(icon)} />
     case 'unavailable':
-      return <CgUnavailable style={{ margin: '0 10px' }} color={color} />
+      return <CgUnavailable style={{ margin: '0 10px' }} color={Color(icon)} />
+    case 'pending':
+      return <VscLoading style={{ margin: '0 10px' }} color={Color(icon)} />
+    default:
+      return null
+  }
+}
+
+const Color = icon => {
+  switch (icon) {
+    case 'available':
+    case 'confirmed':
+      return '#2c570a'
+    case 'unavailable':
+      return '#db0000'
+    case 'pending':
+      return '#ff7841'
     default:
       return null
   }
