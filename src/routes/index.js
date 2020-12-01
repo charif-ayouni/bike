@@ -12,6 +12,7 @@ const Locations = async(() => import('../screens/locations'))
 const Return = async(() => import('../screens/return'))
 const Profile = async(() => import('../screens/profile'))
 const About = async(() => import('../screens/about'))
+const Search = async(() => import('../screens/search'))
 
 const publicRoutes = [
   {
@@ -31,6 +32,11 @@ const privateRoutes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
   },
   {
     path: '/locations',

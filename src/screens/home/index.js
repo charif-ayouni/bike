@@ -1,29 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import Bikes from '../../components/bikes'
-import Single from '../single'
+import { Container, Background, Text, Inner } from './home.style'
+import SearchForm from '../../components/search'
 
 const Home = () => {
-  let content
-  const { displayType, bike } = useSelector(state => state.bikeReducers)
-
-  if (displayType === 'bikes') {
-    content = (
-      <React.Fragment>
-        <Bikes />
-      </React.Fragment>
-    )
-  } else if (bike !== null) {
-    content = (
-      <React.Fragment>
-        <Single bike={bike} />
-      </React.Fragment>
-    )
-  } else {
-    content = <p>Erreur de connexion</p>
-  }
-
-  return <React.Fragment>{content}</React.Fragment>
+  return (
+    <Container>
+      <Background />
+      <Inner>
+        <Text>Réserver votre Vélo dès maintenant</Text>
+        <SearchForm />
+      </Inner>
+    </Container>
+  )
 }
 
 export default Home
