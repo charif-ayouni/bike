@@ -3,14 +3,17 @@ import breakpoints from '../../theme/breakpoints'
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: 750px;
   width: 100%;
-  height: 80px;
   padding: 0;
   margin: 40px auto 70px auto;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  @media only screen and (min-width: ${breakpoints.md}px) {
+    height: 80px;
+    flex-direction: row !important;
+  }
 `
 export const Input = styled.input`
   display: block;
@@ -84,6 +87,9 @@ export const Button = styled.button`
   }
   @media only screen and (min-width: ${breakpoints.md}px) {
     height: 80px;
+  }
+  @media only screen and (max-width: ${breakpoints.md}px) {
+    margin-top: 20px;
   }
 `
 export const Icon = styled.div`
