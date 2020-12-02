@@ -26,10 +26,6 @@ export const Button = styled.button`
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  svg {
-    width: 25px !important;
-    height: 25px;
-  }
   a {
     color: ${props =>
       props.current

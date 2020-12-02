@@ -19,6 +19,7 @@ export const Nav = styled.nav`
   max-width: 100%;
 `
 export const NavLink = styled.a`
+  color: ${props => props.theme.fontColor};
   background-color: transparent;
   border: none;
   margin-right: 26px;

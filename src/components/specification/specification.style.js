@@ -8,6 +8,7 @@ export const Row = styled.div`
   margin-top: 20px;
 `
 export const Column = styled.div`
+  color: ${props => props.theme.fontColor};
   font-weight: 700;
   line-height: 24px;
   font-size: 22px;

@@ -7,8 +7,12 @@ export const Location = styled.div`
   flex-direction: column;
 `
 export const Title = styled.h2`
+  color: ${props => props.theme.fontColor};
   font-size: 22px;
   margin: 0;
+`
+export const Text = styled.p`
+  color: ${props => props.theme.fontColor};
 `
 export const Row = styled.div`
   display: flex;
@@ -49,7 +53,7 @@ export const Column = styled.div`
   ${props => (props.alignItems ? `align-items: ${props.alignItems};` : '')}
 `
 export const Button = styled.a`
-  color: #000000;
+  color: ${props => props.theme.fontColor};
   font-size: 60px;
   height: 100%;
   width: 100%;
@@ -65,34 +69,6 @@ export const Button = styled.a`
     opacity: 0.6;
   }
 `
-export const Item1 = styled.div`
-  display: flex;
-  h2 {
-    margin-top: 0;
-    @media (max-width: 657px) {
-      font-size: 15px;
-    }
-  }
-  span {
-    margin-left: 42px;
-    margin-top: 9px;
-    @media (max-width: 657px) {
-      margin-left: 0;
-      margin-top: 0;
-    }
-  }
-  justify-content: center;
-  @media (max-width: 920px) {
-    flex-direction: column;
-  }
-`
-export const Item2 = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
 export const Span = styled.span`
-  color: white;
-  background-color: ${props => props.theme.primaryColors.greenLight};
+  color: ${props => props.theme.fontColor};
 `

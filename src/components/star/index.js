@@ -18,10 +18,10 @@ const Icon = props => {
   let { icon } = { ...props }
   switch (icon) {
     case 'BsStar':
-      return <BsStar />
+      return <BsStar color='#a5a900' />
     case 'BsStarHalf':
-      return <BsStarHalf />
+      return <BsStarHalf color='#a5a900' />
     default:
-      return <BsStarFill />
+      return <BsStarFill color='#a5a900' />
   }
 }

@@ -5,7 +5,9 @@ import {
   Row,
   Picture,
   Button,
-  Column
+  Column,
+  Text,
+  Span
 } from './location.style'
 import { BsChevronCompactRight } from 'react-icons/bs'
 import Status from '../../../../components/status'
@@ -19,9 +21,9 @@ const Location = props => {
         <Column direction='column' alignItems='flex-start'>
           <Title>{location.title}</Title>
           <Status status={location.status} />
-          <p>Commande N° {location.locationNumber}</p>
-          <span>Effectuée le {location.date}</span>
-          <p>Total: {location.price} €</p>
+          <Text>Commande N° {location.locationNumber}</Text>
+          <Span>Effectuée le {location.date}</Span>
+          <Text>Total: {location.price} €</Text>
         </Column>
         <Column width={10} alignItems='center'>
           <Button>

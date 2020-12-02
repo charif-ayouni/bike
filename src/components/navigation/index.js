@@ -1,46 +1,47 @@
 import React from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, Wrapper, Button, ButtonHome } from './navigation.style'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentDots } from '@fortawesome/free-regular-svg-icons'
-import {
-  faStream,
-  faUndoAlt,
-  faUser,
-  faBiking
-} from '@fortawesome/free-solid-svg-icons'
+import { FaStream, FaUndoAlt, FaUser, FaBiking } from 'react-icons/fa'
+import { IoIosSunny, IoIosPartlySunny } from 'react-icons/io'
+import { toggleTheme } from '../../redux/actions/themeAction'
 
 const Navigation = () => {
+  const dispatch = useDispatch()
   const location = useLocation()
+  const { currentTheme } = useSelector(state => state.themeReducers)
+
+  const toggle = () => {
+    dispatch(toggleTheme())
+  }
+
   if (location && !['/login', '/register'].includes(location.pathname)) {
     return (
       <Container>
         <Wrapper>
           <Button current={location.pathname === '/locations'}>
             <Link to='/locations'>
-              <FontAwesomeIcon icon={faStream} />
+              <FaStream style={{ fontSize: '25px' }} />
             </Link>
           </Button>
 
           <Button current={location.pathname === '/return'}>
             <Link to='/return'>
-              <FontAwesomeIcon icon={faUndoAlt} />
+              <FaUndoAlt style={{ fontSize: '25px' }} />
             </Link>
           </Button>
           <ButtonHome current={location.pathname === '/'}>
             <Link to='/'>
-              <FontAwesomeIcon icon={faBiking} />
+              <FaBiking style={{ fontSize: '25px' }} />
             </Link>
           </ButtonHome>
           <Button current={location.pathname === '/profile'}>
             <Link to='/profile'>
-              <FontAwesomeIcon icon={faUser} />
+              <FaUser style={{ fontSize: '25px' }} />
             </Link>
           </Button>
-          <Button current={location.pathname === '/about'}>
-            <Link to='/about'>
-              <FontAwesomeIcon icon={faCommentDots} />
-            </Link>
+          <Button onClick={() => toggle()}>
+            <ThemeIcon theme={currentTheme.name} />
           </Button>
         </Wrapper>
       </Container>
@@ -51,3 +52,15 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+const ThemeIcon = props => {
+  let { theme } = { ...props }
+  switch (theme) {
+    case 'light':
+      return <IoIosSunny style={{ fontSize: '25px' }} />
+    case 'dark':
+      return <IoIosPartlySunny style={{ fontSize: '25px' }} />
+    default:
+      break
+  }
+}

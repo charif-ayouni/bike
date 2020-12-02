@@ -12,9 +12,9 @@ export const Card = styled.div`
   -ms-flex-direction: column;
   flex-direction: column;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: ${props => props.theme.background};
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: ${props => props.theme.border};
   border-radius: 0.25rem;
   margin: 20px;
 `
@@ -35,6 +35,7 @@ export const CardBody = styled.div`
   padding: 1.25rem;
 `
 export const Title = styled.h5`
+  color: ${props => props.theme.fontColor};
   margin-top: 0;
   margin-bottom: 0.75rem;
   font-size: 18px;
