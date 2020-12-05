@@ -8,6 +8,9 @@ export const Form = styled.form`
   width: 100%;
   padding: 0;
   margin: 40px auto 70px auto;
+  @media screen and (max-width: ${breakpoints.sm}px) {
+    margin-top: 10px !important;
+  }
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   @media only screen and (min-width: ${breakpoints.md}px) {

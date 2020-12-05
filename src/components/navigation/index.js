@@ -1,18 +1,24 @@
 import React from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation, useHistory, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Wrapper, Button, ButtonHome } from './navigation.style'
 import { FaStream, FaUndoAlt, FaUser, FaBiking } from 'react-icons/fa'
 import { IoIosSunny, IoIosPartlySunny } from 'react-icons/io'
 import { toggleTheme } from '../../redux/actions/themeAction'
+import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
 
 const Navigation = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const location = useLocation()
   const { currentTheme } = useSelector(state => state.themeReducers)
 
   const toggle = () => {
     dispatch(toggleTheme())
+  }
+  const goHome = () => {
+    dispatch(setCurrentDisplayType('bikes'))
+    history.push('/')
   }
 
   if (location && !['/login', '/register'].includes(location.pathname)) {
@@ -30,10 +36,11 @@ const Navigation = () => {
               <FaUndoAlt style={{ fontSize: '25px' }} />
             </Link>
           </Button>
-          <ButtonHome current={location.pathname === '/'}>
-            <Link to='/'>
-              <FaBiking style={{ fontSize: '25px' }} />
-            </Link>
+          <ButtonHome
+            current={location.pathname === '/'}
+            onClick={() => goHome()}
+          >
+            <FaBiking style={{ fontSize: '25px' }} />
           </ButtonHome>
           <Button current={location.pathname === '/profile'}>
             <Link to='/profile'>

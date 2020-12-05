@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import breakpoints from '../theme/breakpoints'
 
 export default createGlobalStyle`
     
@@ -50,5 +51,13 @@ export default createGlobalStyle`
       justify-content: center;
       align-items: center;
       flex-direction: column;
+    }
+    .infinite-scroll-component__outerdiv {
+      width: 60% !important;
+    }
+    .gm-bundled-control ,.gm-bundled-control-on-bottom {
+      @media only screen and (max-width: ${breakpoints.sm}px) {
+        bottom: 410px!important;
+      }
     }
 `

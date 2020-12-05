@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 0;
   background: ${props => props.theme.background};
   box-shadow: 0 -2px 5px rgb(185 185 185 / 73%);
-  z-index: 0;
+  z-index: 99;
 `
 export const Wrapper = styled.div`
   height: 56px;

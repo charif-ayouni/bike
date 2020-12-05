@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import backgroundImage from '../../assets/images/backgroundSearch.jpg'
+import breakpoints from '../../theme/breakpoints'
 const height = 'calc(100vh - 116px)'
 export const Container = styled.div`
   position: relative;
@@ -23,13 +24,22 @@ export const Inner = styled.div`
   height: ${height} !important;
   padding: 40px;
   display: flex;
-  justify-content: center;
+  @media only screen and (max-width: ${breakpoints.sm}px) {
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+  @media only screen and (min-width: ${breakpoints.sm}px) {
+    justify-content: center;
+  }
   align-items: center;
   flex-direction: column;
 `
 export const Text = styled.h1`
   color: #ffffff;
   font-size: 35px;
+  @media screen and (max-width: ${breakpoints.sm}px) {
+    font-size: 25px !important;
+  }
   text-align: center;
   text-shadow: 1px 0px 10px rgb(0, 0, 0);
 `

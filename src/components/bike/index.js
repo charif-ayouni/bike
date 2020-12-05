@@ -1,4 +1,5 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import 'react-nice-dates/build/style.css'
 import {
   Container,
@@ -13,29 +14,33 @@ import {
   Button,
   Diviser,
   Back
-} from './single.style'
+} from './bike.style'
 import Carousel from '../../components/carousel'
 import Rate from '../../components/rate'
 import Status from '../../components/status'
 import Specification from '../../components/specification'
 import { IoReturnUpBackOutline } from 'react-icons/io5'
-import { useHistory } from 'react-router-dom'
+import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
 
 const Single = () => {
-  const history = useHistory()
+  const dispatch = useDispatch()
+  const { bike } = useSelector(state => state.bikeReducers)
+  const goBack = () => {
+    dispatch(setCurrentDisplayType('bikes'))
+  }
   return (
     <Container>
-      <Back onClick={() => history.goBack()}>
+      <Back onClick={() => goBack()}>
         <IoReturnUpBackOutline style={{ fontSize: '18px' }} />
       </Back>
       <Row border={true}>
         <LeftBox>
-          <Carousel />
+          <Carousel pictures={bike.pictures} />
         </LeftBox>
         <RightBox>
-          <Title>E-BIKE EXTREME EDITION</Title>
-          <Status status={'available'} />
-          <Rate rate='1.33' />
+          <Title>{bike.title}</Title>
+          <Status status={bike.status} />
+          <Rate rate={bike.rate} />
           <Ul border={true}>
             <Li>
               Condition: <LiValue>New Bike</LiValue>
@@ -44,7 +49,7 @@ const Single = () => {
               Couleur: <LiValue>Blanc Glacier/Lin</LiValue>
             </Li>
           </Ul>
-          <Price>27€ par jour</Price>
+          <Price>{bike.price} par jour</Price>
           <Button>Reserver</Button>
         </RightBox>
       </Row>

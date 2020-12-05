@@ -89,6 +89,13 @@ export const Back = styled.button`
   height: 40px;
   position: absolute;
   top: 70px;
-  left: 40px;
   border: none;
+  border-radius: 2px;
+  z-index: 99;
+  @media only screen and (max-width: ${breakpoints.sm}px) {
+    left: 10px;
+  }
+  @media only screen and (min-width: ${breakpoints.sm}px) {
+    left: 40px;
+  }
 `

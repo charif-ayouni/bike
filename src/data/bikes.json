@@ -1,0 +1,162 @@
+[
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo1.jpg",
+    "title": "Right Out of the Gate",
+    "rate": "3.2",
+    "city": "paris",
+    "status": "available",
+    "price": "55 €",
+    "position": {
+      "lat": 48.90180328446071,
+      "lng": 2.208019955859933
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo1.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo2.jpg"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo2.jpg",
+    "title": "Son of a Gun",
+    "rate": "1.9",
+    "city": "paris",
+    "status": "available",
+    "price": "22 €",
+    "position": {
+      "lat": 48.90116854493212,
+      "lng": 2.2129874068670055
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo2.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo1.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo3.jpg"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo3.jpg",
+    "title": "Birds of a Feather Flock Together",
+    "rate": "2.0",
+    "city": "paris",
+    "status": "available",
+    "price": "34 €",
+    "position": {
+      "lat": 48.90386078093424,
+      "lng": 2.213536283354326
+    },
+    "pictures": ["https://ayouni-charif.fr/files/bikeApplication/velo3.jpg"]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo4.jpg",
+    "title": "Not the Sharpest Tool in the Shed",
+    "rate": "2.2",
+    "city": "paris",
+    "status": "available",
+    "price": "60 €",
+    "position": {
+      "lat": 48.90180328446071,
+      "lng": 2.2129874068670055
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo4.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo5.png"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo5.png",
+    "title": "Plot Thickens - The",
+    "rate": "1.9",
+    "city": "paris",
+    "status": "unavailable",
+    "price": "80 €",
+    "position": {
+      "lat": 48.90180328446071,
+      "lng": 2.213536283354326
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo5.png",
+      "https://ayouni-charif.fr/files/bikeApplication/velo8.png"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo6.png",
+    "title": "Son of a Gun",
+    "rate": "4.9",
+    "city": "paris",
+    "status": "available",
+    "price": "30 €",
+    "position": {
+      "lat": 48.90180328446071,
+      "lng": 2.208019955859933
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo6.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo2.jpg"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo7.jpg",
+    "title": "Tough It Outn",
+    "rate": "12",
+    "city": "nanterre",
+    "status": "available",
+    "price": "40 €",
+    "position": {
+      "lat": 48.90116854493212,
+      "lng": 2.208019955859933
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo7.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo8.png",
+      "https://ayouni-charif.fr/files/bikeApplication/velo9.png"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo8.png",
+    "title": "Cry Over Spilt Milkn",
+    "rate": "2",
+    "city": "colombes",
+    "status": "unavailable",
+    "price": "20 €",
+    "position": {
+      "lat": 48.90386078093424,
+      "lng": 2.208019955859933
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo8.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo3.jpg",
+      "https://ayouni-charif.fr/files/bikeApplication/velo5.png"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo9.png",
+    "title": "Lickety Split",
+    "rate": "3",
+    "city": "paris",
+    "status": "available",
+    "price": "100 €",
+    "position": {
+      "lat": 48.90180328446071,
+      "lng": 2.213536283354326
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo9.png",
+      "https://ayouni-charif.fr/files/bikeApplication/velo10.png"
+    ]
+  },
+  {
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo10.png",
+    "title": "Under the Weather",
+    "rate": "7",
+    "city": "paris",
+    "status": "unavailable",
+    "price": "10 €",
+    "position": {
+      "lat": 48.90116854493212,
+      "lng": 2.213536283354326
+    },
+    "pictures": [
+      "https://ayouni-charif.fr/files/bikeApplication/velo10.png",
+      "https://ayouni-charif.fr/files/bikeApplication/velo5.png"
+    ]
+  }
+]

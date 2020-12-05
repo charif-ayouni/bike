@@ -19,6 +19,7 @@ export const Form = styled.form`
   width: 90vw;
   max-width: 380px;
   padding: 40px;
+  margin-top: 40px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   color: #fff;

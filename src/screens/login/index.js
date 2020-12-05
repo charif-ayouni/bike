@@ -27,10 +27,12 @@ const Login = () => {
             <Input type='password' name='password' required />
           </Group>
           <Group>
-            <Button type='submit'>Je me connecte</Button>
+            <Button>
+              <Link to='/'>Je me connecte</Link>
+            </Button>
           </Group>
           <Group mt={30}>
-            <Link to='/forgot-password'>J'ai oublié mes accès</Link>
+            <Link to='/forgot-password'>J'ai oublié mes accès </Link>
           </Group>
           <Group mt={10}>
             <Link to='/register'>Créer un compte</Link>
