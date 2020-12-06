@@ -5,6 +5,7 @@ import { theme } from './theme/theme'
 import Routes from './routes'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import firebase from './services/firebase'
 
 const App = () => {
   const [currentTheme, setCurrentTheme] = useState({
@@ -15,6 +16,14 @@ const App = () => {
     store.subscribe(() => {
       setCurrentTheme(store.getState().themeReducers.currentTheme)
     })
+    const message = firebase.messaging()
+    message
+      .requestPermission()
+      .then(() => {
+        return message.getToken()
+      })
+      .then(token => localStorage.setItem('notification-token', token))
+      .catch(err => console.log('ERROR : ', err))
   })
   return (
     <Provider store={store}>

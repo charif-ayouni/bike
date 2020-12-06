@@ -30,7 +30,6 @@ const Navigation = () => {
               <FaStream style={{ fontSize: '25px' }} />
             </Link>
           </Button>
-
           <Button current={location.pathname === '/return'}>
             <Link to='/return'>
               <FaUndoAlt style={{ fontSize: '25px' }} />

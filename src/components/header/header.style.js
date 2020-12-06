@@ -20,7 +20,6 @@ export const Row = styled.div`
   justify-content: space-between;
 `
 export const HeaderTop = styled.div`
-  width: 30%;
   max-width: 945px;
   display: flex;
   justify-content: center;
