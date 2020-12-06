@@ -2,8 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Bikes from '../../components/bikes'
 import Bike from '../../components/bike'
+import { useTranslation } from 'react-i18next'
 
 const Home = () => {
+  const { t } = useTranslation()
   let content
   const { displayType } = useSelector(state => state.bikeReducers)
 
@@ -20,7 +22,7 @@ const Home = () => {
       </React.Fragment>
     )
   } else {
-    content = <p>Erreur de connexion</p>
+    content = <p>{t('connexionError')}</p>
   }
 
   return <React.Fragment>{content}</React.Fragment>

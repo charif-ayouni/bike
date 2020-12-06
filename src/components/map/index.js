@@ -2,14 +2,19 @@ import React from 'react'
 import { IconContainer, Container } from './map.style.js'
 import GoogleMapReact from 'google-map-react'
 import { MdDirectionsBike } from 'react-icons/md'
+import { useSelector } from 'react-redux'
 
 const Map = props => {
   let { offset, bikes } = { ...props }
+  const { currentLanguage } = useSelector(state => state.languageReducer)
 
   return (
     <Container offset={offset}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCJZZWgsWsP3PYCpA_uV6HfuKtPrC6xvkE' }}
+        bootstrapURLKeys={{
+          key: 'AIzaSyCJZZWgsWsP3PYCpA_uV6HfuKtPrC6xvkE',
+          language: currentLanguage.locale.slice(0, 2)
+        }}
         defaultCenter={{
           lat: bikes[0].position.lat,
           lng: bikes[0].position.lng

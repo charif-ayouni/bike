@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom'
 import App from './app'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
+import i18n from './services/translate/i18n'
+import { I18nextProvider } from 'react-i18next'
 
 ReactDOM.render(
   <React.Fragment>
-    <App />
+    <I18nextProvider i18n={i18n}>
+      <App />
+    </I18nextProvider>
   </React.Fragment>,
   document.getElementById('root')
 )

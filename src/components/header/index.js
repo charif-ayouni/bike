@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, HeaderTop, Row, Ul, Li } from './header.style'
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { Fr, En } from '../tag'
 import Logo from '../../components/logo'
+import { toggleLanguage } from '../../redux/actions/languageAction'
 
 const Header = () => {
   const location = useLocation()
@@ -19,7 +21,7 @@ const Header = () => {
               <UlChild key='instagram' link='/instagram' icon='FaInstagram' />
             </Ul>
             <Ul ml={20}>
-              <Flag key='fr' lang='Fr' />
+              <Flag />
             </Ul>
           </HeaderTop>
         </Row>
@@ -43,11 +45,17 @@ const UlChild = props => {
   )
 }
 
-const Flag = props => {
-  let { lang } = { ...props }
+const Flag = () => {
+  const dispatch = useDispatch()
+  const { currentLanguage } = useSelector(state => state.languageReducer)
+
+  const changeLanguage = () => {
+    dispatch(toggleLanguage())
+  }
+
   return (
-    <Li>
-      <Icon icon={lang} />
+    <Li onClick={() => changeLanguage()}>
+      <Icon icon={currentLanguage.icon} />
     </Li>
   )
 }

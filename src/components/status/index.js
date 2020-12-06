@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Label } from './status.style'
 import { CgUnavailable } from 'react-icons/cg'
 import { GiCheckMark } from 'react-icons/gi'
@@ -6,18 +7,11 @@ import { VscLoading } from 'react-icons/vsc'
 
 const Status = props => {
   let { status } = { ...props }
-  const translate = status => {
-    let statuses = {
-      available: 'disponible',
-      unavailable: 'indisponible',
-      pending: 'en cours',
-      confirmed: 'confirmées'
-    }
-    return statuses[status]
-  }
+  const { t } = useTranslation()
+
   return (
     <Label color={Color(status)}>
-      {translate(status)}
+      {t(status)}
       <Icon icon={status} />
     </Label>
   )

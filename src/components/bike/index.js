@@ -21,8 +21,10 @@ import Status from '../../components/status'
 import Specification from '../../components/specification'
 import { IoReturnUpBackOutline } from 'react-icons/io5'
 import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
+import { useTranslation } from 'react-i18next'
 
 const Single = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const { bike } = useSelector(state => state.bikeReducers)
   const goBack = () => {
@@ -43,19 +45,21 @@ const Single = () => {
           <Rate rate={bike.rate} />
           <Ul border={true}>
             <Li>
-              Condition: <LiValue>New Bike</LiValue>
+              {t('condition')}: <LiValue>New Bike</LiValue>
             </Li>
             <Li>
-              Couleur: <LiValue>Blanc Glacier/Lin</LiValue>
+              {t('color')}: <LiValue>Blanc Glacier/Lin</LiValue>
             </Li>
           </Ul>
-          <Price>{bike.price} par jour</Price>
-          <Button>Reserver</Button>
+          <Price>
+            {bike.price} {t('perDay')}
+          </Price>
+          <Button>{t('reserve')}</Button>
         </RightBox>
       </Row>
       <Diviser />
       <Row direction='column'>
-        <Title>Spécifications</Title>
+        <Title>{t('specifications')}</Title>
         <Ul>
           <Specification />
         </Ul>

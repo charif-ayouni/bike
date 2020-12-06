@@ -6,11 +6,13 @@ import { findAllStatic } from '../../services/api'
 import { setBikes } from '../../redux/actions/bikeActions'
 import { useDispatch } from 'react-redux'
 import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
+import { useTranslation } from 'react-i18next'
 
 const SearchForm = () => {
   let [where, setWhere] = useState()
   const history = useHistory()
   const dispatch = useDispatch()
+  const { t } = useTranslation()
 
   const searchData = event => {
     event.preventDefault()
@@ -44,15 +46,15 @@ const SearchForm = () => {
           <CgSearchLoading color='#757575' size={40} />
         </Icon>
         <WhereBox>
-          <Label>Où ?</Label>
+          <Label>{t('where')} ?</Label>
           <Input
             name='where'
-            placeholder='Ville, Rue, Cartier...'
+            placeholder={t('wherePlaceholder')}
             onChange={event => handleChange(event)}
           />
         </WhereBox>
       </Box>
-      <Button onClick={event => searchData(event)}>Voir les vélos</Button>
+      <Button onClick={event => searchData(event)}>{t('searchButton')}</Button>
     </Form>
   )
 }

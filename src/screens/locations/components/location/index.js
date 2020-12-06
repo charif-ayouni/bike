@@ -9,11 +9,13 @@ import {
   Text,
   Span
 } from './location.style'
+import { useTranslation } from 'react-i18next'
 import { BsChevronCompactRight } from 'react-icons/bs'
 import Status from '../../../../components/status'
 
 const Location = props => {
   let { location } = { ...props }
+  const { t } = useTranslation()
   return (
     <Box>
       <Row border={true}>
@@ -21,9 +23,15 @@ const Location = props => {
         <Column direction='column' alignItems='flex-start'>
           <Title>{location.title}</Title>
           <Status status={location.status} />
-          <Text>Commande N° {location.locationNumber}</Text>
-          <Span>Effectuée le {location.date}</Span>
-          <Text>Total: {location.price} €</Text>
+          <Text>
+            {t('order')} N° {location.locationNumber}
+          </Text>
+          <Span>
+            {t('effectedOn')} {location.date}
+          </Span>
+          <Text>
+            {t('total')}: {location.price} €
+          </Text>
         </Column>
         <Column width={10} alignItems='center'>
           <Button>

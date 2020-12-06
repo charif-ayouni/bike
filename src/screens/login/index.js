@@ -10,32 +10,34 @@ import {
   Link
 } from './login.index'
 import Avatar from './components/avatar'
+import { useTranslation } from 'react-i18next'
 
 const Login = () => {
+  const { t } = useTranslation()
   return (
     <Container>
       <Wrapper>
         <Form>
           <Avatar />
-          <Title>Bienvenue !</Title>
+          <Title>{t('welcome')} !</Title>
           <Group>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>{t('email')}</label>
             <Input type='text' name='email' required />
           </Group>
           <Group>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>{t('password')}</label>
             <Input type='password' name='password' required />
           </Group>
           <Group>
             <Button>
-              <Link to='/'>Je me connecte</Link>
+              <Link to='/'>{t('login')}</Link>
             </Button>
           </Group>
           <Group mt={30}>
-            <Link to='/forgot-password'>J'ai oublié mes accès </Link>
+            <Link to='/forgot-password'>{t('forgoPassword')} </Link>
           </Group>
           <Group mt={10}>
-            <Link to='/register'>Créer un compte</Link>
+            <Link to='/register'>{t('createAccount')}</Link>
           </Group>
         </Form>
       </Wrapper>

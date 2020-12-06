@@ -14,3 +14,9 @@ export const findAllStatic = async filter => {
   setTimeout(() => {}, 900)
   return data.filter(address => address.city === filter.toLowerCase())
 }
+
+export const findLocationsStatic = async () => {
+  let data = require('../../data/locations')
+  setTimeout(() => {}, 500)
+  return data
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "MIGO Style 28 pouces 56 cm Homme 6SP V-Brake Noir mat",
+    "date": "24-09-2020",
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo2.jpg",
+    "locationNumber": "093457466869",
+    "price": "500",
+    "status": "pending"
+  },
+  {
+    "title": "VELO DE VILLE ELOPS 520 CADRE BAS BLEU JEANS",
+    "date": "24-09-2020",
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo3.jpg",
+    "locationNumber": "093457466869",
+    "price": "234",
+    "status": "confirmed"
+  },
+  {
+    "title": "VELO DE VILLE ELOPS 520 CADRE BAS BLEU JEANS",
+    "date": "21-09-2020",
+    "image": "https://ayouni-charif.fr/files/bikeApplication/velo3.jpg",
+    "locationNumber": "093422466869",
+    "price": "134",
+    "status": "pending"
+  }
+]

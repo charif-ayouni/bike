@@ -1,19 +1,21 @@
 import React from 'react'
 import { Row, Column, Item } from './specification.style.js'
+import { useTranslation } from 'react-i18next'
 
 const Specification = () => {
+  const { t } = useTranslation()
   return (
     <React.Fragment>
       <Row border={true}>
-        <Column>Cadre</Column>
+        <Column>{t('frame')}</Column>
         <Column>
           <ul>
             <Item>
-              Type de cadre
+              {t('frameType')}
               <span>Unisex</span>
             </Item>
             <Item>
-              Matériaux du cadre
+              {t('frameMaterials')}
               <span>Aluminium</span>
             </Item>
           </ul>
@@ -21,22 +23,22 @@ const Specification = () => {
         <Column>
           <ul>
             <Item>
-              Taille du cadre
+              {t('frameSize')}
               <span>Medium 49cm, Grande 53cm</span>
             </Item>
           </ul>
         </Column>
       </Row>
       <Row>
-        <Column>Roue</Column>
+        <Column>{t('wheel')}</Column>
         <Column>
           <ul>
             <Item>
-              Taille des roues
+              {t('wheelSize')}
               <span>28 pouces</span>
             </Item>
             <Item>
-              Pneu avant bleu emblématique
+              {t('emblematiqueBlueFrontTire')}
               <span>Bien sûr</span>
             </Item>
           </ul>
@@ -44,7 +46,7 @@ const Specification = () => {
         <Column>
           <ul>
             <Item>
-              Pneus
+              {t('tires')}
               <span>Roues de 47 mm pour un confort extra</span>
             </Item>
           </ul>
