@@ -10,16 +10,15 @@ import {
   Title,
   Link,
   Error
-} from './login.index'
+} from './forgotPassword.index'
 import Avatar from './components/avatar'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../../context/authContext'
 
-const Login = () => {
+const ForgotPassword = () => {
   const email = useRef()
-  const password = useRef()
   const { t } = useTranslation()
-  const { login } = useAuth()
+  const { resetPassword } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -27,17 +26,17 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    if (password.current.value.length <= 0) {
-      return setError('error_password')
+    if (email.current.value.length <= 0) {
+      return setError('error_email')
     }
 
     try {
       setError('')
       setLoading(true)
-      await login(email.current.value, password.current.value)
-      history.push('/')
+      await resetPassword(email.current.value)
+      history.push('/login')
     } catch (e) {
-      setError('error_login')
+      setError('error_resetPassword')
     }
     setLoading(false)
   }
@@ -54,16 +53,12 @@ const Login = () => {
             <Input type='text' name='email' ref={email} required />
           </Group>
           <Group>
-            <label htmlFor='password'>{t('password')}</label>
-            <Input type='password' name='password' ref={password} required />
-          </Group>
-          <Group>
             <Button
               type='submit'
               onClick={e => handleSubmit(e)}
               disabled={loading}
             >
-              {t('login')}
+              {t('resetPassword')}
             </Button>
           </Group>
           <Group mt={30}>
@@ -78,4 +73,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default ForgotPassword

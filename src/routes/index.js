@@ -2,11 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import async from '../components/async'
 import WithAuth from '../withAuth'
-import Navigation from '../components/navigation'
-import Header from '../components/header'
+import Navigation from '../layouts/navigation'
+import Header from '../layouts/header'
 
 const Login = async(() => import('../screens/login'))
 const Register = async(() => import('../screens/register'))
+const ForgotPassword = async(() => import('../screens/forgotPassword'))
 const Home = async(() => import('../screens/home'))
 const Locations = async(() => import('../screens/locations'))
 const Return = async(() => import('../screens/return'))
@@ -24,6 +25,11 @@ const publicRoutes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgotPassword',
+    component: ForgotPassword
   }
 ]
 

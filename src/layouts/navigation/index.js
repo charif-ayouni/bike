@@ -21,7 +21,10 @@ const Navigation = () => {
     history.push('/')
   }
 
-  if (location && !['/login', '/register'].includes(location.pathname)) {
+  if (
+    location &&
+    !['/login', '/register', '/forgot-password'].includes(location.pathname)
+  ) {
     return (
       <Container>
         <Wrapper>

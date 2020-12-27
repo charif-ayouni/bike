@@ -1,35 +1,30 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, HeaderTop, Row, Ul, Li } from './header.style'
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
-import { Fr, En } from '../tag'
+import { Fr, En } from '../../components/tag'
 import Logo from '../../components/logo'
 import { toggleLanguage } from '../../redux/actions/languageAction'
 
 const Header = () => {
-  const location = useLocation()
-  if (location && !['/login', '/register'].includes(location.pathname)) {
-    return (
-      <Container>
-        <Row>
-          <Logo />
-          <HeaderTop>
-            <Ul>
-              <UlChild key='facebook' link='/facebook' icon='FaFacebook' />
-              <UlChild key='twitter' link='/twitter' icon='FaTwitter' />
-              <UlChild key='instagram' link='/instagram' icon='FaInstagram' />
-            </Ul>
-            <Ul ml={20}>
-              <Flag />
-            </Ul>
-          </HeaderTop>
-        </Row>
-      </Container>
-    )
-  } else {
-    return null
-  }
+  return (
+    <Container>
+      <Row>
+        <Logo />
+        <HeaderTop>
+          <Ul>
+            <UlChild key='facebook' link='/facebook' icon='FaFacebook' />
+            <UlChild key='twitter' link='/twitter' icon='FaTwitter' />
+            <UlChild key='instagram' link='/instagram' icon='FaInstagram' />
+          </Ul>
+          <Ul ml={20}>
+            <Flag />
+          </Ul>
+        </HeaderTop>
+      </Row>
+    </Container>
+  )
 }
 
 export default Header

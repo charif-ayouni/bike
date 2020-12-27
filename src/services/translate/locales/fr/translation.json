@@ -29,12 +29,25 @@
   "email" : "Adresse email",
   "password" : "Mot de passe",
   "login" : "Je me connecte",
+  "resetPassword" : "réinitialiser mon mot de passe",
   "forgoPassword" : "J'ai oublié mes accès",
   "createAccount" : "Créer un compte",
   "haveAccount" : "J'ai déjà un compte",
   "register" : "S’inscrire",
   "firstName": "Prénom",
+  "error_firstName": "Veuillez saisir un prénom valide",
   "lastName": "Nom",
-  "connexionError": "Erreur de connexion"
+  "error_lastName": "Veuillez saisir un nom valide",
+  "address": "Adresse",
+  "city": "Ville",
+  "zip": "Code postal",
+  "error_login": "Les identifiants que vous avez saisis (e-mail ou mot de passe) ne sont pas reconnus. Veuillez réessayer.",
+  "error_resetPassword": "Veuillez saisir une adresse email valide.",
+  "error_creating_account": "Erreur lors de la création du compte.",
+  "error_email": "Veuillez saisir une adresse email valide.",
+  "error_password": "Veuillez saisir un mot de passe valide.",
+  "error_password_length": "Le mot de passe doit comporter au moins 6 caractères",
+  "connexionError": "Erreur de connexion",
+  "is_easy" : "C'est rapide et facile"
 
 }

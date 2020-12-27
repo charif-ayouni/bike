@@ -6,6 +6,7 @@ import Routes from './routes'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import firebase from './services/firebase'
+import { AuthProvider } from './context/authContext'
 
 const App = () => {
   const [currentTheme, setCurrentTheme] = useState({
@@ -26,14 +27,16 @@ const App = () => {
       .catch(err => console.log('ERROR : ', err))
   })
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={currentTheme.style}>
-        <GlobalStyle theme={currentTheme.style} />
-        <div className='App'>
-          <Routes />
-        </div>
-      </ThemeProvider>
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={currentTheme.style}>
+          <GlobalStyle theme={currentTheme.style} />
+          <div className='App'>
+            <Routes />
+          </div>
+        </ThemeProvider>
+      </Provider>
+    </AuthProvider>
   )
 }
 
