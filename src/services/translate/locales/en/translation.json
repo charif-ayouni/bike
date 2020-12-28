@@ -28,12 +28,15 @@
   "welcome" : "Welcome",
   "email" : "Email",
   "password" : "Password",
+  "edit_password" : "Edit my password",
   "login" : "Login",
   "resetPassword" : "Reset my password",
   "forgoPassword" : "I forgot my access",
   "createAccount" : "Create an account",
   "haveAccount" : "I already have an account",
   "register" : "Register",
+  "save" : "Save",
+  "logout": "logout",
   "firstName": "First Name",
   "error_firstName": "Please enter a valid First Name",
   "lastName": "Last Name",
@@ -47,6 +50,7 @@
   "error_email": "Please enter a valid email address.",
   "error_password": "Please enter a valid password.",
   "error_password_length": "Password should be at least 6 characters",
+  "error_firstname_lastname": "Please enter a valid first name and last name",
   "connexionError": "Connexion error",
   "is_easy" : "It's quick and easy"
 }

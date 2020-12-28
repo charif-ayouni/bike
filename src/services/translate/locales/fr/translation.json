@@ -28,12 +28,15 @@
   "welcome" : "Bienvenue",
   "email" : "Adresse email",
   "password" : "Mot de passe",
+  "edit_password" : "Modifier mon password",
   "login" : "Je me connecte",
   "resetPassword" : "réinitialiser mon mot de passe",
   "forgoPassword" : "J'ai oublié mes accès",
   "createAccount" : "Créer un compte",
   "haveAccount" : "J'ai déjà un compte",
   "register" : "S’inscrire",
+  "save" : "Sauvegarder",
+  "logout": "Se déconnecter",
   "firstName": "Prénom",
   "error_firstName": "Veuillez saisir un prénom valide",
   "lastName": "Nom",
@@ -47,6 +50,7 @@
   "error_email": "Veuillez saisir une adresse email valide.",
   "error_password": "Veuillez saisir un mot de passe valide.",
   "error_password_length": "Le mot de passe doit comporter au moins 6 caractères",
+  "error_firstname_lastname": "Veuillez saisir un nom et prénom valide",
   "connexionError": "Erreur de connexion",
   "is_easy" : "C'est rapide et facile"
 
