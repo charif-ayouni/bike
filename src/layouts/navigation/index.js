@@ -1,21 +1,16 @@
 import React from 'react'
 import { useLocation, useHistory, Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Container, Wrapper, Button, ButtonHome } from './navigation.style'
 import { FaStream, FaUndoAlt, FaUser, FaBiking } from 'react-icons/fa'
-import { IoIosSunny, IoIosPartlySunny } from 'react-icons/io'
-import { toggleTheme } from '../../redux/actions/themeAction'
 import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
+import ThemeToggle from '../../components/themeToggle'
 
 const Navigation = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const location = useLocation()
-  const { currentTheme } = useSelector(state => state.themeReducers)
 
-  const toggle = () => {
-    dispatch(toggleTheme())
-  }
   const goHome = () => {
     dispatch(setCurrentDisplayType('bikes'))
     history.push('/')
@@ -49,9 +44,7 @@ const Navigation = () => {
               <FaUser style={{ fontSize: '25px' }} />
             </Link>
           </Button>
-          <Button onClick={() => toggle()}>
-            <ThemeIcon theme={currentTheme.name} />
-          </Button>
+          <ThemeToggle />
         </Wrapper>
       </Container>
     )
@@ -61,15 +54,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
-const ThemeIcon = props => {
-  let { theme } = { ...props }
-  switch (theme) {
-    case 'light':
-      return <IoIosSunny style={{ fontSize: '25px' }} />
-    case 'dark':
-      return <IoIosPartlySunny style={{ fontSize: '25px' }} />
-    default:
-      break
-  }
-}

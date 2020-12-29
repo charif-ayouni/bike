@@ -18,7 +18,8 @@ export default createGlobalStyle`
     }
     
     body {
-      background-color: ${props => props.theme.background}
+      background-color: ${props => props.theme.background};
+      transition: all 0.25s linear;
     }
     
     body::-webkit-scrollbar {
