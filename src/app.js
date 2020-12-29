@@ -7,8 +7,10 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import firebase from './services/firebase'
 import { AuthProvider } from './context/authContext'
+import { useSidenav } from './context/sidenavContext'
 
 const App = () => {
+  const { open } = useSidenav()
   const [currentTheme, setCurrentTheme] = useState({
     name: 'light',
     style: theme.light
@@ -30,7 +32,7 @@ const App = () => {
     <AuthProvider>
       <Provider store={store}>
         <ThemeProvider theme={currentTheme.style}>
-          <GlobalStyle theme={currentTheme.style} />
+          <GlobalStyle theme={currentTheme.style} isOpen={open} />
           <div className='App'>
             <Routes />
           </div>

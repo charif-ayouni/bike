@@ -4,6 +4,8 @@ const theme = {
     background: '#ffffff',
     fontColor: '#000000',
     border: '1px solid rgba(0,0,0,0.125)',
+    toggleBorder: '#fff',
+    gradient: 'linear-gradient(#39598A, #79D7ED)',
     primaryColors: {
       greenDark: '#2c570a',
       greenLight: '#8bc345',
@@ -19,6 +21,8 @@ const theme = {
     background: '#171717',
     fontColor: '#ffffff',
     border: '1px solid #eaeaea66',
+    toggleBorder: '#6B8096',
+    gradient: 'linear-gradient(#091236, #1E215D)',
     primaryColors: {
       greenDark: '#8bc345',
       greenLight: '#8bc345',

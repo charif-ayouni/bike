@@ -20,6 +20,7 @@ export default createGlobalStyle`
     body {
       background-color: ${props => props.theme.background};
       transition: all 0.25s linear;
+      transition: background-color .5s;
     }
     
     body::-webkit-scrollbar {
@@ -33,10 +34,6 @@ export default createGlobalStyle`
 
     a {
       text-decoration: none;
-
-      &:visited {
-        color: inherit;
-      }
     }
     
     .infinite-scroll-component::-webkit-scrollbar {
@@ -52,6 +49,8 @@ export default createGlobalStyle`
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      transition: margin-left .5s;
+      margin-left: ${({ isOpen }) => (isOpen ? 250 : 0)}px;
     }
     .infinite-scroll-component__outerdiv {
       width: 60% !important;

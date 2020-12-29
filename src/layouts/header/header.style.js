@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import breakpoints from '../../theme/breakpoints'
 
 export const Container = styled.header`
   position: relative;
@@ -10,8 +11,14 @@ export const Container = styled.header`
   width: 100%;
   height: 60px;
   box-shadow: 0 2px 5px rgb(185 185 185 / 73%);
-  padding-left: 20px;
-  padding-right: 20px;
+  @media (min-width: ${breakpoints.md}px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @media (max-width: ${breakpoints.md}px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `
 export const Row = styled.div`
   width: 100%;

@@ -6,10 +6,20 @@ export const Container = styled.div`
   position: relative;
   background: #000;
   width: 100vw;
-  height: ${height};
+  @media (max-width: ${breakpoints.md}px) {
+    height: ${height};
+  }
+  @media (min-width: ${breakpoints.md}px) {
+    height: 100%;
+  }
 `
 export const Background = styled.div`
-  height: ${height} !important;
+  @media (max-width: ${breakpoints.md}px) {
+    height: ${height} !important;
+  }
+  @media (min-width: ${breakpoints.md}px) {
+    height: 100vh !important;
+  }
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-attachment: scroll;

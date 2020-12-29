@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Container, HeaderTop, Row, Ul, Li } from './header.style'
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { Fr, En } from '../../components/tag'
+import Menu from '../../components/menu'
 import Logo from '../../components/logo'
 import { toggleLanguage } from '../../redux/actions/languageAction'
 
 const Header = () => {
   return (
     <Container>
+      <Menu />
       <Row>
         <Logo />
         <HeaderTop>

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
+import breakpoints from '../../theme/breakpoints'
 
 export const Container = styled.div`
+  @media (min-width: ${breakpoints.md}px) {
+    display: none !important;
+  }
   position: fixed;
   left: 0;
   right: 0;

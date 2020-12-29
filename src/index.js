@@ -5,12 +5,15 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
 import i18n from './services/translate/i18n'
 import { I18nextProvider } from 'react-i18next'
+import { SidenavProvider } from './context/sidenavContext'
 
 ReactDOM.render(
   <React.Fragment>
-    <I18nextProvider i18n={i18n}>
-      <App />
-    </I18nextProvider>
+    <SidenavProvider>
+      <I18nextProvider i18n={i18n}>
+        <App />
+      </I18nextProvider>
+    </SidenavProvider>
   </React.Fragment>,
   document.getElementById('root')
 )

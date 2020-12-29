@@ -4,6 +4,7 @@ import async from '../components/async'
 import WithAuth from '../withAuth'
 import Navigation from '../layouts/navigation'
 import Header from '../layouts/header'
+import Sidenav from '../layouts/sidenav'
 
 const Login = async(() => import('../screens/login'))
 const Register = async(() => import('../screens/register'))
@@ -82,6 +83,7 @@ const Routes = () => (
         />
       ))}
     </Switch>
+    <Sidenav />
     <Navigation />
   </Router>
 )
