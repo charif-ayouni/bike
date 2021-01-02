@@ -16,22 +16,24 @@ const Map = props => {
           language: currentLanguage.locale.slice(0, 2)
         }}
         defaultCenter={{
-          lat: bikes[0].position.lat,
-          lng: bikes[0].position.lng
+          lat: bikes[0]?.position.lat,
+          lng: bikes[0]?.position.lng
         }}
         defaultZoom={15}
         hoverDistance={15 / 2}
       >
-        {bikes.map((bike, index) => {
-          return (
-            <Marker
-              lat={bike.position.lat}
-              lng={bike.position.lng}
-              text={bike.title}
-              key={index}
-            />
-          )
-        })}
+        {bikes
+          ? bikes.map((bike, index) => {
+              return (
+                <Marker
+                  lat={bike.position.lat}
+                  lng={bike.position.lng}
+                  text={bike.title}
+                  key={index}
+                />
+              )
+            })
+          : null}
       </GoogleMapReact>
     </Container>
   )
