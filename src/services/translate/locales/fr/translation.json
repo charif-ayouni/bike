@@ -6,7 +6,7 @@
   "loading" : "En cours de chargement",
   "reviews" : "Commentaires",
   "where" : "Où",
-  "wherePlaceholder" : "Ville, Rue, Cartier...",
+  "wherePlaceholder" : "Ville, Rue, Quartier...",
   "searchButton": "Voir les vélos",
   "frame": "Cadre",
   "frameType" : "Type de cadre",
@@ -52,6 +52,12 @@
   "error_password_length": "Le mot de passe doit comporter au moins 6 caractères",
   "error_firstname_lastname": "Veuillez saisir un nom et prénom valide",
   "connexionError": "Erreur de connexion",
-  "is_easy" : "C'est rapide et facile"
+  "is_easy" : "C'est rapide et facile",
+  "switchTheme": "Changer de thème",
+  "findBike": "Trouver un Vélo",
+  "myRentals": "Mes locations",
+  "cancellation": "Annulation",
+  "myProfile": "Mon profil"
+
 
 }

@@ -23,6 +23,8 @@ export const Wrapper = styled.div`
 `
 
 export const Button = styled.button`
+  width: calc(100vw / 5);
+  justify-content: center;
   color: ${props => props.theme.primaryColors.greenDark};
   border: none;
   padding: 0;
@@ -30,25 +32,29 @@ export const Button = styled.button`
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  background: transparent;
   a {
     color: ${props =>
       props.current
-        ? props.theme.secondaryColors.greenLight
+        ? props.theme.primaryColors.greenLight
         : props.theme.primaryColors.greenDark};
+    ${props =>
+      props.current
+        ? ` background: ${props.theme.secondaryColors.greenTransparent};
+      border-radius: 100%;
+      border: 1px solid #8bc34552;
+      box-shadow: inset 0 0 0 0 transparent;
+      padding: 0.5rem;`
+        : 'background: transparent'};
   }
   &:focus {
     outline: none;
   }
-  ${props =>
-    props.current
-      ? ` background: ${props.theme.secondaryColors.greenTransparent};
-    border-radius: 100%;
-    box-shadow: inset 0 0 0 0 transparent;
-    padding: 0.5rem;`
-      : 'background: transparent'};
 `
 
 export const ButtonHome = styled.button`
+  width: calc(100vw / 5);
+  justify-content: center;
   color: ${props => props.theme.primaryColors.greenDark};
   border: none;
   padding: 0;

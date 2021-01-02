@@ -84,7 +84,7 @@ export const Thumbnail = styled.div`
   }*/
 `
 export const Name = styled.h3`
-  color: #2d354a;
+  color: ${props => props.theme.fontColor};
   font-size: 24px;
   font-weight: 600;
   text-align: center;
@@ -110,7 +110,10 @@ export const Group = styled.div`
   @media only screen and (min-width: ${breakpoints.sm}px) {
     width: 40%;
   }
-  ${props => (props.mt ? `margin-top: ${props.mt}px` : '')}
+  ${props => (props.mt ? `margin-top: ${props.mt}px` : '')};
+  label {
+    color: ${props => props.theme.fontColor};
+  }
 `
 export const GroupButton = styled.div`
   display: flex;

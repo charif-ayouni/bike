@@ -1,10 +1,11 @@
 import React from 'react'
 import { ToggleContainer } from './themeToggle.style'
 import { useDispatch, useSelector } from 'react-redux'
-import { FaSun, FaMoon } from 'react-icons/fa'
 import { toggleTheme } from '../../redux/actions/themeAction'
+import { ReactComponent as MoonIcon } from './icons/moon.svg'
+import { ReactComponent as SunIcon } from './icons/sun.svg'
 
-const themeToggle = () => {
+const ThemeToggle = () => {
   const dispatch = useDispatch()
   const { currentTheme } = useSelector(state => state.themeReducers)
   const toggle = () => {
@@ -15,10 +16,10 @@ const themeToggle = () => {
 
   return (
     <ToggleContainer lightTheme={isLight} onClick={() => toggle()}>
-      <FaSun />
-      <FaMoon />
+      <SunIcon />
+      <MoonIcon />
     </ToggleContainer>
   )
 }
 
-export default themeToggle
+export default ThemeToggle

@@ -11,7 +11,7 @@ export const Container = styled.div`
   z-index: 999;
   top: 0;
   left: -3px;
-  background-color: #fff;
+  background-color: ${props => props.theme.background};
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -41,4 +41,22 @@ export const Close = styled.a`
       color: #264a77;
     }
   }
+`
+export const ThemeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+`
+export const Links = styled.div``
+export const Row = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+export const Span = styled.span`
+  margin: 10px;
+  color: ${props => props.theme.fontColor};
 `

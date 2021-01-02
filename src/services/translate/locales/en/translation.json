@@ -6,7 +6,7 @@
   "loading" : "Loading",
   "reviews" : "reviews",
   "where" : "Where",
-  "wherePlaceholder" : "City, Street, Cartier...",
+  "wherePlaceholder" : "City, Street, District...",
   "searchButton" : "See the bikes",
   "frame" : "Frame",
   "frameType" : "Frame type",
@@ -52,5 +52,10 @@
   "error_password_length": "Password should be at least 6 characters",
   "error_firstname_lastname": "Please enter a valid first name and last name",
   "connexionError": "Connexion error",
-  "is_easy" : "It's quick and easy"
+  "is_easy" : "It's quick and easy",
+  "switchTheme": "Change theme",
+  "findBike": "Find a bike",
+  "myRentals": "My rentals",
+  "cancellation": "Cancellation",
+  "myProfile": "My profile"
 }
