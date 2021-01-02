@@ -36,7 +36,8 @@
   "haveAccount" : "I already have an account",
   "register" : "Register",
   "save" : "Save",
-  "logout": "logout",
+  "cancel" : "Cancel",
+  "logout": "Logout",
   "firstName": "First Name",
   "error_firstName": "Please enter a valid First Name",
   "lastName": "Last Name",
@@ -57,5 +58,17 @@
   "findBike": "Find a bike",
   "myRentals": "My rentals",
   "cancellation": "Cancellation",
-  "myProfile": "My profile"
+  "myProfile": "My profile",
+  "return": "Return",
+  "next": "Next",
+  "pay": "Pay",
+  "selectDate": "Please choose a date",
+  "startDate" : "Start date",
+  "endDate" : "End date",
+  "CardNumber": "Card number",
+  "ExpirationDate": "Expiration date",
+  "cvc": "CVC",
+  "paymentTitle": "Payment",
+  "refusedPayment": "Your payment has been refused",
+  "acceptedPayment": "Your payment has been accepted"
 }

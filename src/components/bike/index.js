@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import 'react-nice-dates/build/style.css'
 import {
@@ -8,27 +8,38 @@ import {
   RightBox,
   Title,
   Ul,
-  Li,
-  LiValue,
-  Price,
+  Buttons,
   Button,
+  ButtonReturn,
   Diviser,
   Back
 } from './bike.style'
 import Carousel from '../../components/carousel'
-import Rate from '../../components/rate'
-import Status from '../../components/status'
 import Specification from '../../components/specification'
 import { IoReturnUpBackOutline } from 'react-icons/io5'
 import { setCurrentDisplayType } from '../../redux/actions/bikeActions'
 import { useTranslation } from 'react-i18next'
+import Steps from './steps'
 
 const Single = () => {
+  const [step, setStep] = useState(1)
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const { bike } = useSelector(state => state.bikeReducers)
   const goBack = () => {
     dispatch(setCurrentDisplayType('bikes'))
+  }
+  const nextStep = e => {
+    e.preventDefault()
+    if (step <= 2) {
+      setStep(step + 1)
+    }
+  }
+  const previousStep = e => {
+    e.preventDefault()
+    if (step >= 2) {
+      setStep(step - 1)
+    }
   }
   return (
     <Container>
@@ -40,21 +51,22 @@ const Single = () => {
           <Carousel pictures={bike.pictures} />
         </LeftBox>
         <RightBox>
-          <Title>{bike.title}</Title>
-          <Status status={bike.status} />
-          <Rate rate={bike.rate} />
-          <Ul border={true}>
-            <Li>
-              {t('condition')}: <LiValue>New Bike</LiValue>
-            </Li>
-            <Li>
-              {t('color')}: <LiValue>Blanc Glacier/Lin</LiValue>
-            </Li>
-          </Ul>
-          <Price>
-            {bike.price} {t('perDay')}
-          </Price>
-          <Button>{t('reserve')}</Button>
+          <Steps step={step} />
+          {step === 1 ? (
+            <Button onClick={e => nextStep(e)}>{t('reserve')}</Button>
+          ) : null}
+          {step > 1 ? (
+            <Buttons>
+              {step !== 3 ? (
+                <>
+                  <Button onClick={e => nextStep(e)}>{t('next')}</Button>
+                  <ButtonReturn type='button' onClick={e => previousStep(e)}>
+                    {t('return')}
+                  </ButtonReturn>
+                </>
+              ) : null}
+            </Buttons>
+          ) : null}
         </RightBox>
       </Row>
       <Diviser />

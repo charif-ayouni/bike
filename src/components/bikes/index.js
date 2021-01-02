@@ -17,7 +17,6 @@ const Bikes = () => {
 
   useEffect(() => {
     window.onscroll = () => {
-      console.log(window.pageYOffset)
       if (window.pageYOffset !== undefined) {
         if (window.pageYOffset <= 65) {
           setOffset(window.pageYOffset)

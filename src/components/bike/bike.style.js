@@ -44,29 +44,18 @@ export const Title = styled.h2`
   font-size: 40px;
   margin: 0;
 `
-export const Price = styled.h2`
-  color: ${props => props.theme.fontColor};
-  font-size: 25px;
-  line-height: 24px;
-  font-weight: 700;
-`
+
 export const Ul = styled.ul`
   margin: 20px 0;
   ${props => (props.border ? 'border-bottom: 1px solid #eaeaea;' : '')}
 `
-export const Li = styled.li`
-  color: ${props => props.theme.fontColor};
-  display: block;
-  margin: 5px 0;
-  &:last-child {
-    padding-bottom: 15px;
-  }
-`
-export const LiValue = styled.span`
-  color: ${props => props.theme.primaryColors.greenDark};
-`
+
 export const Diviser = styled.div`
   margin-top: ${props => (props.size ? props.size : '40')}px;
+`
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 export const Button = styled.button`
   width: 100%;
@@ -77,6 +66,21 @@ export const Button = styled.button`
   text-decoration: none;
   color: #fff;
   background-color: ${props => props.theme.primaryColors.greenDark};
+  border: none;
+  border-radius: 0px;
+  outline: 0;
+  padding: 5px 3rem;
+  cursor: pointer;
+  margin-top: 30px;
+`
+export const ButtonReturn = styled.button`
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
   border: none;
   border-radius: 0px;
   outline: 0;

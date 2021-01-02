@@ -36,6 +36,7 @@
   "haveAccount" : "J'ai déjà un compte",
   "register" : "S’inscrire",
   "save" : "Sauvegarder",
+  "cancel" : "Annuler",
   "logout": "Se déconnecter",
   "firstName": "Prénom",
   "error_firstName": "Veuillez saisir un prénom valide",
@@ -57,7 +58,17 @@
   "findBike": "Trouver un Vélo",
   "myRentals": "Mes locations",
   "cancellation": "Annulation",
-  "myProfile": "Mon profil"
-
-
+  "myProfile": "Mon profil",
+  "return": "Retour",
+  "next": "Suivant",
+  "pay": "Payer",
+  "selectDate": "Veuillez choisir une date",
+  "startDate" : "Date de début",
+  "endDate" : "Date de fin",
+  "CardNumber": "Numéro de la carte",
+  "ExpirationDate": "Date d'expiration",
+  "cvc": "CVC",
+  "paymentTitle": "Paiement",
+  "refusedPayment": "Votre paiement a été refusé",
+  "acceptedPayment": "Votre paiement a été accepté"
 }
