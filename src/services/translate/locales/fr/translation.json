@@ -70,5 +70,7 @@
   "cvc": "CVC",
   "paymentTitle": "Paiement",
   "refusedPayment": "Votre paiement a été refusé",
-  "acceptedPayment": "Votre paiement a été accepté"
+  "acceptedPayment": "Votre paiement a été accepté",
+  "newConnection": "Nouvelle connexion",
+  "welcomeBack": "Bienvenue de nouveau"
 }
