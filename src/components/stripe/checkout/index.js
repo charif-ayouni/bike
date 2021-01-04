@@ -9,6 +9,7 @@ import {
   CardExpiryElement
 } from '@stripe/react-stripe-js'
 import { useTranslation } from 'react-i18next'
+import { sendNotification } from '../../../services/firebase'
 
 const StripeCheckout = () => {
   const { t } = useTranslation()
@@ -74,6 +75,27 @@ const StripeCheckout = () => {
         }
         */
         setSuccess('acceptedPayment')
+
+        let to = localStorage.getItem('fcm-token')
+          ? localStorage.getItem('fcm-token')
+          : null
+
+        if (to) {
+          let notification = {
+            to: to,
+            priority: 'high',
+            notification: {
+              title: t('orderConfirmationTitle'),
+              body: t('orderConfirmationBody')
+            }
+          }
+          sendNotification(notification)
+            .then()
+            .catch(err => {
+              console.log(err)
+            })
+        }
+
         setTimeout(() => {
           history.push('/')
         }, 3000)

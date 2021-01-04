@@ -72,5 +72,7 @@
   "refusedPayment": "Your payment has been refused",
   "acceptedPayment": "Your payment has been accepted",
   "newConnection": "New connection",
-  "welcomeBack": "Welcome back"
+  "welcomeBack": "Welcome back",
+  "orderConfirmationTitle": "Order confirmation",
+  "orderConfirmationBody": "Your order has been successfully completed"
 }
