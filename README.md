@@ -30,7 +30,11 @@ REACT_APP_FIREBASE_APP_ID
 REACT_APP_FIREBASE_MEASUREMENT_ID
 ```
 ## Bonus
-- API [Bike](https://github.com/charif-ayouni/bike-back)
+- API [Notifications server FCM](https://github.com/charif-ayouni/bike-notification-server)
+- Context
+- Firebase Cloud Messaging (Notifications)
+- Firebase Authentication & Cloud firestore
+- Stripe
 
 ## Les pages
 
