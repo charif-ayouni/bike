@@ -74,5 +74,6 @@
   "newConnection": "New connection",
   "welcomeBack": "Welcome back",
   "orderConfirmationTitle": "Order confirmation",
-  "orderConfirmationBody": "Your order has been successfully completed"
+  "orderConfirmationBody": "Your order has been successfully completed",
+  "offline": "Oops.. you are in offline mode !"
 }

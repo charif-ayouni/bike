@@ -7,6 +7,7 @@ import { Fr, En } from '../../components/tag'
 import Menu from '../../components/menu'
 import Logo from '../../components/logo'
 import { toggleLanguage } from '../../redux/actions/languageAction'
+import Offline from '../../components/offline'
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
       <Menu />
       <Row>
         <Logo />
+        <Offline />
         <HeaderTop>
           <Ul>
             <UlChild key='facebook' link='/facebook' icon='FaFacebook' />

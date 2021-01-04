@@ -74,5 +74,6 @@
   "newConnection": "Nouvelle connexion",
   "welcomeBack": "Bienvenue de nouveau",
   "orderConfirmationTitle": "Confirmation de votre commande",
-  "orderConfirmationBody": "Votre commande a été effectuée avec success"
+  "orderConfirmationBody": "Votre commande a été effectuée avec success",
+  "offline": "Oops.. vous êtes en mode hors ligne !"
 }
