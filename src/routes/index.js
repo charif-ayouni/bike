@@ -11,7 +11,7 @@ const Register = async(() => import('../screens/register'))
 const ForgotPassword = async(() => import('../screens/forgotPassword'))
 const Home = async(() => import('../screens/home'))
 const Locations = async(() => import('../screens/locations'))
-const Return = async(() => import('../screens/return'))
+//const Return = async(() => import('../screens/return'))
 const Profile = async(() => import('../screens/profile'))
 const About = async(() => import('../screens/about'))
 const Search = async(() => import('../screens/search'))
@@ -53,7 +53,7 @@ const privateRoutes = [
   {
     path: '/return',
     name: 'return',
-    component: Return
+    component: Locations
   },
   {
     path: '/profile',

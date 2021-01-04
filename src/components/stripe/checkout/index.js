@@ -9,7 +9,10 @@ import {
   CardExpiryElement
 } from '@stripe/react-stripe-js'
 import { useTranslation } from 'react-i18next'
-import { sendNotification } from '../../../services/firebase'
+import { sendNotification, setLocation } from '../../../services/firebase'
+import { useDispatch, useSelector } from 'react-redux'
+import { addOrder } from '../../../redux/actions/orderActions'
+import { useAuth } from '../../../context/authContext'
 
 const StripeCheckout = () => {
   const { t } = useTranslation()
@@ -35,6 +38,10 @@ const StripeCheckout = () => {
     }
   }
   const history = useHistory()
+  const dispatch = useDispatch()
+  const { bike } = useSelector(state => state.bikeReducers)
+  const { order } = useSelector(state => state.orderReducer)
+  const { user } = useAuth()
 
   const handleChange = event => {
     if (event.error) {
@@ -53,7 +60,7 @@ const StripeCheckout = () => {
       return
     }
 
-    const { error } = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardNumberElement)
     })
@@ -75,6 +82,25 @@ const StripeCheckout = () => {
         }
         */
         setSuccess('acceptedPayment')
+        let _order = {
+          uid: user.uid,
+          date: order.date,
+          bike: {
+            title: bike.title,
+            price: bike.price,
+            image: bike.image
+          },
+          code: {
+            brand: paymentMethod.card.brand,
+            country: paymentMethod.card.country,
+            last4: paymentMethod.card.last4
+          },
+          createdAt: new Date().toLocaleDateString(),
+          status: 'pending'
+        }
+        dispatch(addOrder(_order))
+
+        setLocation(_order, paymentMethod.id)
 
         let to = localStorage.getItem('fcm-token')
           ? localStorage.getItem('fcm-token')

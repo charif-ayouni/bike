@@ -2,22 +2,28 @@ import React, { useState, useEffect } from 'react'
 import { Container, Nav, NavLink } from './locations.index'
 import Location from './components/location'
 import { useTranslation } from 'react-i18next'
-import { findLocationsStatic } from '../../services/api'
+import { getLocations } from '../../services/firebase'
+import { useAuth } from '../../context/authContext'
 
 const Locations = () => {
+  const { user } = useAuth()
   const { t } = useTranslation()
   const [tab, setTab] = useState(1)
 
   let [data, setData] = useState([])
   useEffect(() => {
-    findLocationsStatic()
+    getLocations(user.uid)
       .then(res => {
-        setData(res)
+        let tmp = []
+        res.forEach(doc => {
+          tmp.push(doc.data())
+        })
+        setData(tmp)
       })
       .catch(err => {
         console.log(err)
       })
-  }, [data])
+  }, [])
 
   return (
     <Container>

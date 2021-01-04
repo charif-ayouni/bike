@@ -19,18 +19,18 @@ const Location = props => {
   return (
     <Box>
       <Row border={true}>
-        <Picture src={location.image} />
+        <Picture src={location.bike.image} />
         <Column direction='column' alignItems='flex-start'>
-          <Title>{location.title}</Title>
+          <Title>{location.bike.title}</Title>
           <Status status={location.status} />
           <Text>
-            {t('order')} N° {location.locationNumber}
+            {t('order')} N° {location.uid}
           </Text>
           <Span>
-            {t('effectedOn')} {location.date}
+            {t('effectedOn')} {location.createdAt}
           </Span>
           <Text>
-            {t('total')}: {location.price} €
+            {t('total')}: {location.bike.price}
           </Text>
         </Column>
         <Column width={10} alignItems='center'>

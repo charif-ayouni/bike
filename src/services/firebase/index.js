@@ -31,6 +31,16 @@ export const sendNotification = async notification => {
   return Axios(config, notification)
 }
 
+export const getLocations = async uid => {
+  const locationsRef = firestore.collection('locations')
+  return await locationsRef.where('uid', '==', uid).get()
+}
+
+export const setLocation = async (data, id) => {
+  const locationsRef = firestore.collection('locations').doc(id)
+  return await locationsRef.set(data)
+}
+
 export const auth = app.auth()
 export const database = app.database()
 export const firestore = app.firestore()

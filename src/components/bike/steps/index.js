@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Status from '../../status'
 import Rate from '../../rate'
 import { useTranslation } from 'react-i18next'
@@ -18,6 +18,9 @@ import { FaChevronRight } from 'react-icons/fa'
 
 import 'react-nice-dates/build/style.css'
 import Stripe from '../../stripe'
+
+import { useDispatch } from 'react-redux'
+import { addOrder } from '../../../redux/actions/orderActions'
 
 // eslint-disable-next-line react/prop-types
 const Steps = ({ step }) => {
@@ -60,11 +63,22 @@ const DatesStep = () => {
   const { currentLanguage } = useSelector(state => state.languageReducer)
   const { t } = useTranslation()
   let local = currentLanguage.icon === 'Fr' ? frCA : enUS
-  console.log(local)
-  console.log(currentLanguage)
   const [startDate, setStartDate] = useState()
   const [endDate, setEndDate] = useState()
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    if (startDate && endDate) {
+      dispatch(
+        addOrder({
+          date: {
+            from: startDate.toLocaleDateString(),
+            to: endDate.toLocaleDateString()
+          }
+        })
+      )
+    }
+  }, [startDate, endDate])
   return (
     <DateRangePicker
       startDate={startDate}
