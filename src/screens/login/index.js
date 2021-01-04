@@ -14,6 +14,7 @@ import {
 import Avatar from './components/avatar'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../../context/authContext'
+import { sendNotification } from '../../services/firebase'
 
 const Login = () => {
   const email = useRef()
@@ -35,6 +36,25 @@ const Login = () => {
       setError('')
       setLoading(true)
       await login(email.current.value, password.current.value)
+      let to = localStorage.getItem('fcm-token')
+        ? localStorage.getItem('fcm-token')
+        : null
+
+      if (to) {
+        let notification = {
+          to: to,
+          priority: 'high',
+          notification: {
+            body: t('welcomeBack'),
+            title: t('newConnection')
+          }
+        }
+        sendNotification(notification)
+          .then()
+          .catch(err => {
+            console.log(err)
+          })
+      }
       history.push('/')
     } catch (e) {
       setError('error_login')

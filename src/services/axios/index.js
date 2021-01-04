@@ -5,6 +5,7 @@ export const Axios = async (config, data = null) => {
     method: config.method,
     url: config.url,
     params: config.params,
+    headers: config.headers,
     data: data
   })
 }

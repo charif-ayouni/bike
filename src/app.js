@@ -5,7 +5,7 @@ import { theme } from './theme/theme'
 import Routes from './routes'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
-import firebase from './services/firebase'
+import { messaging } from './services/firebase'
 import { AuthProvider } from './context/authContext'
 import { useSidenav } from './context/sidenavContext'
 
@@ -19,14 +19,20 @@ const App = () => {
     store.subscribe(() => {
       setCurrentTheme(store.getState().themeReducers.currentTheme)
     })
-    const message = firebase.messaging()
-    message
-      .requestPermission()
-      .then(() => {
-        return message.getToken()
+
+    messaging()
+      .then(token => {
+        localStorage.setItem('fcm-token', token)
       })
-      .then(token => localStorage.setItem('notification-token', token))
-      .catch(err => console.log('ERROR : ', err))
+      .catch(err => {
+        console.log('An error occurred while retrieving token. ', err)
+      })
+
+    /*const registerPushListener = () =>
+      navigator.serviceWorker.addEventListener('message', ({ data }) =>
+        console.log(data)
+      )
+    registerPushListener()*/
   })
   return (
     <AuthProvider>
