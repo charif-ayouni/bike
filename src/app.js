@@ -28,11 +28,11 @@ const App = () => {
         console.log('An error occurred while retrieving token. ', err)
       })
 
-    /*const registerPushListener = () =>
+    const registerPushListener = () =>
       navigator.serviceWorker.addEventListener('message', ({ data }) =>
         console.log(data)
       )
-    registerPushListener()*/
+    registerPushListener()
   })
   return (
     <AuthProvider>
