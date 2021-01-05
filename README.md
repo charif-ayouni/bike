@@ -2,7 +2,7 @@
 
 # Bike
 
-## ✨ [Demo](https://bike-react.netlify.app)
+## ✨ [Demo](https://bikeday.netlify.app/)
 
 ## Installation
 
